@@ -2,7 +2,7 @@
 
 A Boot task that provides compilation of Kotlin source files.
 
-[![Clojars Project](https://img.shields.io/clojars/v/seancorfield/boot-kotlinc.svg)](https://clojars.org/sseancorfield/boot-kotlinc)
+[![Clojars Project](https://img.shields.io/clojars/v/seancorfield/boot-kotlinc.svg)](https://clojars.org/seancorfield/boot-kotlinc)
 
 ## Basic Usage
 
