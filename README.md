@@ -37,7 +37,7 @@ Or you can compile it and make an uberjar:
 
 You can specify `-v` for verbose mode. This will print out how `boot-kotlinc` is invoking the Kotlin compiler (showing the classpath and other options), as well as telling the Kotlin compiler itself to be verbose.
 
-You can override the default location for Kotlin source code (`src/kt`) with the `-k` or `--source` option.
+You can override the default location for Kotlin source code (`src/kt`) with the `-k` or `--source` option. You can specify this multiple times for multiple source locations.
 
 ## Roadmap
 

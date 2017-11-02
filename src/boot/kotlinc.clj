@@ -17,8 +17,8 @@
 
   Adds compiled Kotlin files to the Boot filesystem so they can be part of
   an Clojure project -- either used in the REPL, or rolled up into an uber jar."
-  [k source  PATH str  "the Kotlin source path, defaults to src/kt"
-   v verbose      bool "Be verbose!"]
+  [k source  PATH [str] "the Kotlin source path, defaults to src/kt"
+   v verbose      bool  "Be verbose!"]
   ;; The Kotlin compiler tries to read files on its classpath so we want to
   ;; restrict what it sees to just dependencies from Maven/Clojars etc.
   ;; In addition, we do not want it to see itself on the classpath!
@@ -35,7 +35,7 @@
                                                 "-no-stdlib"
                                                 "-cp" cp]
                                          verbose (conj "-verbose")
-                                         true (conj (or source "src/kt"))))]
+                                         true (into (or source ["src/kt"]))))]
         (when verbose
           (println "Invoking Kotlin compiler with" (str/join " " options)))
         (org.jetbrains.kotlin.cli.jvm.K2JVMCompiler/main options)
