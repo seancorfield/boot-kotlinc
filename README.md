@@ -39,10 +39,23 @@ You can specify `-v` for verbose mode. This will print out how `boot-kotlinc` is
 
 You can override the default location for Kotlin source code (`src/kt`) with the `-k` or `--source` option. You can specify this multiple times for multiple source locations.
 
+The `-t` or `--test` option will add a dependency on `org.jetbrains.kotline/kotlin-test` and will also add `test/kt` as a default source location, if `-k` or `--source` was not specified. In other words, the following Boot invocations are equivalent:
+
+    > boot -d seancorfield/boot-kotlinc kotlinc -t repl
+		> boot -d seancorfield/boot-kotlinc \
+		       -d org.jetbrains.kotlin/kotlin-test \
+					 -k src/kt -k test/kt kotlinc repl
+
 ## Roadmap
 
 * Show how to use `boot-kotlinc` in your own `build.boot` file, how to write mixed Clojure/Kotlin projects, etc.
 * Add more options (e.g., specifying Kotlin compiler version, ability to compile to `.class` files in a specific output directory).
+
+## Changes
+
+* 0.1.2 -- 2017-11-28 -- Support kotlin.test via `-t` / `--test` option
+* 0.1.1 -- 2017-11-02 -- Allow multiple source paths (multiple `-k` / `--source` options)
+* 0.1.0 -- 2017-10-23 -- Initial version
 
 ## License
 

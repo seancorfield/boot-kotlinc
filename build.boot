@@ -1,6 +1,6 @@
 (set-env! :resource-paths #{"src"})
 
-(def version "0.1.1")
+(def version "0.1.2")
 
 (task-options!
  pom {:project     'seancorfield/boot-kotlinc
